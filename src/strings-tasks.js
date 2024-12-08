@@ -218,8 +218,20 @@ function removeLastOccurrences(str, value) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  let sum = 0;
+  let i = 0;
+  let result;
+  if (str === undefined || str === null || str.length === 0) {
+    result = 0;
+  } else {
+    while (i < str.length) {
+      sum += str.charCodeAt(i);
+      result = sum;
+      i += 1;
+    }
+  }
+  return result;
 }
 
 /**
@@ -233,8 +245,8 @@ function sumOfCodes(/* str */) {
  *   startsWith('Hello World', 'World') => false
  *   startsWith('Hello World', 'Hello') => true
  */
-function startsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function startsWith(str, substr) {
+  return str.startsWith(substr);
 }
 
 /**
@@ -248,8 +260,8 @@ function startsWith(/* str, substr */) {
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function endsWith(str, substr) {
+  return str.endsWith(substr);
 }
 
 /**
@@ -265,8 +277,8 @@ function endsWith(/* str, substr */) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  return String(seconds).padStart(5, `0${minutes}:`);
 }
 
 /**
@@ -279,8 +291,14 @@ function formatTime(/* minutes, seconds */) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  let i = 0;
+  let result = '';
+  while (i < str.length) {
+    result = `${str[i]}${result}`;
+    i += 1;
+  }
+  return result;
 }
 
 /**
